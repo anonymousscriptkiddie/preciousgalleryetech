@@ -2,9 +2,19 @@
 <html lang="en">
 
 <head>
-    <!--THIS IS THE HEAD--> 
-    <!--tracking visitors using google analytics-->
-   
+    <!--THIS IS THE HEAD-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-80QGMDE842"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+
+        gtag('config', 'G-80QGMDE842');
+    </script>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8" />
@@ -305,6 +315,35 @@
         
         .heady {
             background-image: url("R.png");
+            background-size: cover;
+            /* Ensures the image covers the entire element */
+            background-position: center;
+            /* Centers the image */
+            background-repeat: no-repeat;
+            /* Prevents the image from repeating */
+            height: 100vh;
+            /* Sets the height of the element to the full viewport height */
+            width: 100%;
+            /* Ensures the width of the element is 100% of the container */
+        }
+        /* Optional: If you want to adjust the background for specific screen sizes */
+        
+        @media (max-width: 768px) {
+            .heady {
+                background-size: cover;
+                /* Ensure it's still responsive on smaller screens */
+                background-position: center;
+                /* Keep the background centered */
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .heady {
+                background-size: cover;
+                /* For very small screens, background will still scale well */
+                background-position: center;
+                /* Keeps the background centered */
+            }
         }
         
         * {
@@ -864,6 +903,202 @@
             top: 50%;
             left: 70%;
         }
+        /* Hide list items after the 6th item for mobile devices */
+        
+        .lights li:nth-child(n+7) {
+            display: none;
+        }
+        /* Responsive styling for smaller screens */
+        
+        @media (max-width: 768px) {
+            /* Make sure only 6 items are shown */
+            .lights li:nth-child(n+7) {
+                display: none;
+            }
+        }
+        /* For even smaller screens (e.g., mobile phones) */
+        
+        @media (max-width: 480px) {
+            /* Make sure only 6 items are shown */
+            .lights li:nth-child(n+7) {
+                display: none;
+            }
+        }
+        /* Hide list items after the 6th item for mobile devices */
+        
+        .lights li:nth-child(n+7) {
+            display: none;
+        }
+        /* Responsive styling for smaller screens */
+        
+        @media (max-width: 768px) {
+            /* Make sure only 6 items are shown */
+            .lights li:nth-child(n+7) {
+                display: none;
+            }
+        }
+        /* For even smaller screens (e.g., mobile phones) */
+        
+        @media (max-width: 480px) {
+            /* Make sure only 6 items are shown */
+            .lights li:nth-child(n+7) {
+                display: none;
+            }
+        }
+        /* Hide list items after the 6th item for mobile devices */
+        
+        .lights li:nth-child(n+7) {
+            display: none;
+        }
+        /* Responsive styling for smaller screens */
+        
+        @media (max-width: 768px) {
+            /* Make sure only 6 items are shown */
+            .lights li:nth-child(n+7) {
+                display: none;
+            }
+        }
+        /* Default styling for larger screens (h1) */
+        
+        h1 {
+            font-size: 2.5em;
+            /* other styling for h1 */
+        }
+        /* For mobile screens */
+        
+        @media (max-width: 768px) {
+            h1 {
+                display: none;
+                /* Hide the h1 element */
+            }
+            h1.mobile {
+                display: block;
+                /* Display the h5 on smaller screens */
+                font-size: 1.2em;
+                /* Adjust the font size for mobile */
+            }
+        }
+        /* Default styling for larger screens (h1) */
+        
+        h1.responsive-heading {
+            font-size: 2.5em;
+        }
+        /* For mobile screens, hide h1 and show h5 */
+        
+        @media (max-width: 768px) {
+            h1.responsive-heading {
+                display: none;
+            }
+            .h5-mobile {
+                display: block;
+                font-size: 1.2em;
+                /* Adjust font size for mobile */
+            }
+        }
+        /* Default styling for navigation (desktop) */
+        
+        nav leo ul {
+            display: flex;
+            /* Display the menu items horizontally */
+            justify-content: space-around;
+            padding: 10px;
+            background-color: #333;
+            /* Background color */
+        }
+        
+        nav leo ul li {
+            list-style: none;
+            /* Remove bullet points */
+        }
+        
+        nav leo ul li a {
+            padding: 10px 20px;
+            color: #fff;
+            text-decoration: none;
+            background-color: #555;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        nav leo ul li a:hover {
+            background-color: #ff6f61;
+            /* Hover effect */
+        }
+        /* For mobile screens */
+        
+        @media (max-width: 768px) {
+            nav leo ul {
+                flex-direction: column;
+                /* Stack the items vertically */
+                align-items: center;
+                /* Center align items */
+            }
+            nav leo ul li a {
+                padding: 3px 9px;
+                /* Smaller padding for mobile */
+                font-size: 14px;
+                /* Adjust font size for mobile */
+                margin: 5px 0;
+                /* Add spacing between buttons */
+            }
+        }
+        /* Default styling for navigation (desktop) */
+        
+        nav leo ul {
+            display: flex;
+            /* Display the menu items horizontally */
+            justify-content: space-around;
+            padding: 10px;
+            background-color: #333;
+            /* Background color */
+        }
+        
+        nav leo ul li {
+            list-style: none;
+            /* Remove bullet points */
+        }
+        
+        nav leo ul li a {
+            padding: 10px 20px;
+            color: #fff;
+            text-decoration: none;
+            background-color: #555;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        
+        nav leo ul li a:hover {
+            background-color: #ff6f61;
+            /* Hover effect */
+        }
+        /* For mobile screens */
+        
+        @media (max-width: 768px) {
+            nav leo ul {
+                flex-direction: column;
+                /* Stack the items vertically */
+                align-items: center;
+                /* Center align items */
+                padding: 0;
+                /* Remove extra padding */
+            }
+            nav leo ul li {
+                margin: 5px 0;
+                /* Add spacing between the items */
+                width: 100%;
+                /* Make the list items take full width */
+            }
+            nav leo ul li a {
+                padding: 8px 15px;
+                /* Smaller padding for mobile */
+                font-size: 14px;
+                /* Adjust font size for mobile */
+                text-align: center;
+                /* Center text inside the buttons */
+                width: auto;
+                /* Ensure buttons are not stretched */
+            }
+        }
     </style>
 </head>
 
@@ -930,17 +1165,18 @@
 
             <img style="z-index: -2; position: absolute; bottom:0 ; right: 0; width:50px height=50px" src="shortcake.png" alt="Description of the image">
 
-            <h1>
 
 
-                Precious Candy Prado's Gallery</h1>
+            <h5 class="h5-mobile">Precious Candy Prado's Gallery</h5>
+
+            <h1 class="responsive-heading">Precious Candy Prado's Gallery</h1>
             <nav class="leo">
                 <ul>
-                    <li><a href="#about" class="neon-button" onclick="showSection('about')">About Me</a></li>
-                    <li><a href="#contact" class="neon-button" onclick="showSection('contact')">Contacts</a></li>
-                    <li><a href="#gallery" class="neon-button" onclick="showSection('gallery')">Photo Gallery</a></li>
-                    <li><a href="comments" class="neon-button" onclick="window.open('commentsection.html', '_blank')"> Write </a></li>
-                    <li><a href="pictures" class="neon-button" onclick="window.open('ex.html', '_blank')"> My Photos</a></li>
+                    <li style="z-index: 9999; size:10px;"><a href="#about" class="neon-button" onclick="showSection('about')">About Me</a></li>
+                    <li style="z-index: 9999; "><a href="#contact" class="neon-button" onclick="showSection('contact')">Contacts</a></li>
+                    <li style="z-index: 9999; "><a href="#gallery" class="neon-button" onclick="showSection('gallery')">Photo Gallery</a></li>
+                    <li style="z-index: 9999; "><a href="comments" class="neon-button" onclick="window.open('commentsection.html', '_blank')"> Write </a></li>
+                    <li style="z-index: 9999;"><a href="pictures" class="neon-button" onclick="window.open('ex.html', '_blank')"> My Photos</a></li>
                 </ul>
             </nav>
         </div>
@@ -1153,9 +1389,8 @@
     <footer>
         <nav class="leo">
             <ul>
-                <li><a href="#about" class="neon-button" onclick="showSection('about')">About Me</a></li>
+
                 <li><a href="#contact" class="neon-button" onclick="showSection('contact')">Contacts</a></li>
-                <li><a href="#gallery" class="neon-button" onclick="showSection('gallery')">Photo Gallery</a></li>
                 <li><a href="comments" class="neon-button" onclick="window.open('commentsection.html', '_blank')"> Write </a></li>
                 <li><a href="pictures" class="neon-button" onclick="window.open('ex.html', '_blank')"> My Photos</a></li>
             </ul>
