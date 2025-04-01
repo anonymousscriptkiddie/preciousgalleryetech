@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ferris Wheel with Gallery</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 50px;
+        }
+        
+        .ferris-wheel {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            border: 5px solid black;
+            border-radius: 50%;
+            animation: rotate 10s linear infinite;
+        }
+        
+        .seat {
+            position: absolute;
+            width: 40px;
+            height: 40px;
+            background-color: red;
+            border-radius: 50%;
+        }
+        
+        .gallery {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        
+        .gallery img {
+            width: 100px;
+            height: 100px;
+            object-fit: cover;
+            border-radius: 10px;
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="ferris-wheel">
+            <div class="seat" style="top: 10px; left: 130px;"></div>
+            <div class="seat" style="top: 130px; left: 10px;"></div>
+            <div class="seat" style="top: 130px; left: 230px;"></div>
+            <div class="seat" style="top: 250px; left: 130px;"></div>
+        </div>
+        <div class="gallery">
+            <img src="image1.jpg" alt="Gallery Image 1">
+            <img src="image2.jpg" alt="Gallery Image 2">
+            <img src="image3.jpg" alt="Gallery Image 3">
+        </div>
+    </div>
+</body>
+
+</html>

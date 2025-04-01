@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precious Intro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background: radial-gradient(circle at center, #2a0134, #0d0015);
+            color: #ff00ff;
+            font-family: 'Orbitron', sans-serif;
+            text-align: center;
+            overflow: hidden;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            position: relative;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+            animation: glitch 1s infinite;
+        }
+        
+        @keyframes glitch {
+            0% {
+                text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff;
+            }
+            50% {
+                text-shadow: -2px -2px #ff00ff, 2px 2px #00ffff;
+            }
+            100% {
+                text-shadow: 2px 2px #ff00ff, -2px -2px #00ffff;
+            }
+        }
+        
+        .chat-box {
+            width: 300px;
+            background: rgba(0, 0, 0, 0.6);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(255, 0, 255, 0.8);
+            text-align: left;
+        }
+        
+        .message {
+            background: linear-gradient(45deg, #ff00ff, #ff1493);
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+            margin: 5px 0;
+            opacity: 0;
+            transform: translateY(10px);
+            transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+        }
+        
+        .continue-btn {
+            display: none;
+            background: linear-gradient(45deg, #ff00ff, #ff1493);
+            color: white;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(255, 0, 255, 0.8);
+            cursor: pointer;
+            transition: transform 0.2s ease, box-shadow 0.3s ease;
+        }
+        
+        .continue-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(255, 0, 255, 1);
+        }
+        
+        .continue-btn:active {
+            transform: translateY(2px);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>WELCOME TO PRECIOUS GALLERY</h1>
+        <div class="chat-box">
+            <div class="message" id="msg1">Hello, visitor...</div>
+            <div class="message" id="msg2">Welcome to the Precious Gallery.</div>
+            <div class="message" id="msg3">Wanna know more about me?.</div>
+            <div class="message" id="msg4">who is me?</div>
+            <div class="message" id="msg5">Are you ready to continue?</div>
+        </div>
+        <button onclick="window.open('index.html', '_blank')" class="continue-btn" id="continueBtn">Continue</button>
+    </div>
+
+    <script>
+        const messages = document.querySelectorAll(".message");
+        const continueBtn = document.getElementById("continueBtn");
+
+        let delay = 500;
+        messages.forEach((msg, index) => {
+            setTimeout(() => {
+                msg.style.opacity = "1";
+                msg.style.transform = "translateY(0)";
+            }, delay * (index + 1));
+        });
+
+        setTimeout(() => {
+            continueBtn.style.display = "inline-block";
+        }, delay * (messages.length + 1));
+    </script>
+</body>
+
+</html>

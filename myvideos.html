@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Videos</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #111;
+            color: white;
+            text-align: center;
+        }
+        
+        h1 {
+            margin-top: 20px;
+            text-shadow: 0 0 10px #ff00ff;
+        }
+        
+        .video-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+            max-width: 1000px;
+            margin: auto;
+        }
+        
+        .video {
+            background: #222;
+            padding: 10px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px #ff00ff;
+        }
+        
+        iframe {
+            width: 100%;
+            height: 200px;
+            border-radius: 10px;
+        }
+        
+        button {
+            background: #ff00ff;
+            color: #000;
+            font-weight: bold;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+            margin-top: 20px;
+        }
+        
+        button:hover {
+            background: #00ffff;
+            box-shadow: 0 0 10px #00ffff;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>My Video Collection</h1>
+
+    <div class="video-container">
+        <video width="560" height="315" controls>
+            <source src="Ultrasonic.mp4" type="video/mp4">
+        
+        </video>
+
+    </div>
+    <div class="video">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_2" allowfullscreen></iframe>
+    </div>
+    <div class="video">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_3" allowfullscreen></iframe>
+    </div>
+    <div class="video">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_4" allowfullscreen></iframe>
+    </div>
+    <div class="video">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_5" allowfullscreen></iframe>
+    </div>
+    <div class="video">
+        <iframe src="https://www.youtube.com/embed/VIDEO_ID_6" allowfullscreen></iframe>
+    </div>
+    </div>
+
+    <button onclick="window.location.href='index.html'">Go to Home</button>
+
+</body>
+
+</html>

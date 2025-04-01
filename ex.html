@@ -1,0 +1,522 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <title>Ferris Wheel</title>
+    <style>
+        body {
+            background-image: url("ferris.avif");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            margin: 0;
+            padding: 0;
+            cursor: url('cursor.png') auto;
+            /* Custom strawberry cursor */
+        }
+        
+        #ferris {
+            width: 300vh;
+            height: 300vh;
+            position: right;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        #wheel {
+            width: 75%;
+            height: 75%;
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 50%;
+        }
+        
+        #wheel0 {
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            border: 0.5vh solid #404041;
+            border-radius: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+        
+        #wheel1 {
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1.5vh solid #00adef;
+            border-radius: 50%;
+        }
+        
+        #wheel2 {
+            box-sizing: border-box;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 1vh solid #2c7ec1;
+            border-radius: 50%;
+        }
+        
+        #wheel3 {
+            box-sizing: border-box;
+            width: 60%;
+            height: 60%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 2vh solid #2c7ec1;
+            border-radius: 50%;
+        }
+        
+        #wheel4 {
+            box-sizing: border-box;
+            width: 95%;
+            height: 95%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            border: 0.5vh solid #00adef;
+            border-radius: 50%;
+        }
+        
+        #wheel5 {
+            box-sizing: border-box;
+            width: 50%;
+            height: 50%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #2c7ec1;
+            border-radius: 50%;
+        }
+        
+        #wheel6 {
+            box-sizing: border-box;
+            width: 92%;
+            height: 92%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #00adef;
+            border-radius: 50%;
+        }
+        
+        #wheel7 {
+            box-sizing: border-box;
+            width: 80%;
+            height: 80%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #58585b;
+            border-radius: 50%;
+        }
+        
+        #stand {
+            position: absolute;
+            top: 42%;
+            height: 80%;
+            width: 80%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #58585b;
+            clip-path: polygon(50% 0%, 100% 100%, 92% 100%, 50% 8%, 8% 100%, 0% 100%);
+        }
+        
+        #base {
+            width: 100%;
+            height: 1vh;
+            position: absolute;
+            bottom: -22%;
+            background-color: #484848;
+        }
+        
+        #wheel8 {
+            box-sizing: border-box;
+            width: 12%;
+            height: 12%;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: #6d6e70;
+            border-radius: 50%;
+        }
+        
+        .spoke {
+            height: 95%;
+            width: 2%;
+            background-color: #ffffff;
+            position: absolute;
+            left: 49%;
+            top: 2%;
+        }
+        
+        .seat {
+            width: 10%;
+            height: 20%;
+        }
+        
+        .clip {
+            width: 100%;
+            height: 40%;
+            background-color: #f05a28;
+            clip-path: polygon(50% 0%, 100% 100%, 85% 100%, 50% 25%, 15% 100%, 0% 100%);
+        }
+        
+        .box {
+            box-sizing: border-box;
+            width: 100%;
+            height: 60%;
+            border: 1vh solid #f7931d;
+            position: relative;
+        }
+        
+        .door0 {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            height: 50%;
+            background-color: #f7931d;
+        }
+        
+        .door1 {
+            width: 100%;
+            position: absolute;
+            top: 50%;
+            height: 50%;
+            width: 50%;
+            background-color: #f05a28;
+        }
+        
+        .seat {
+            position: absolute;
+            transform: translateX(-50%);
+        }
+        
+        .container {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+            width: 90%;
+            max-width: 1200px;
+        }
+        
+        #ferris {
+            width: 50%;
+            height: auto;
+            position: relative;
+        }
+        
+        .gallery {
+            position: top;
+        }
+        
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            width: 45%;
+            max-width: 400px;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 15px;
+            border-radius: 10px;
+        }
+        
+        .gallery-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+        }
+        
+        @keyframes rotate {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .pic1 {
+            border: 5px black solid
+        }
+        
+        .pic2 {
+            border: 5px black solid
+        }
+        
+        .pic3 {
+            border: 5px black solid;
+        }
+        
+        .pic4 {
+            border: 5px black solid;
+        }
+        
+        .home {
+            background-color: #fbeee0;
+            border: 2px solid #422800;
+            border-radius: 30px;
+            box-shadow: #422800 4px 4px 0 0;
+            color: #422800;
+            cursor: pointer;
+            display: inline-block;
+            font-weight: 600;
+            font-size: 18px;
+            padding: 0 18px;
+            line-height: 50px;
+            text-align: center;
+            text-decoration: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+        }
+        
+        .home:hover {
+            background-color: #fff;
+        }
+        
+        .home:active {
+            box-shadow: #422800 2px 2px 0 0;
+            transform: translate(2px, 2px);
+        }
+        
+        @media (min-width: 768px) {
+            .home {
+                min-width: 120px;
+                padding: 0 25px;
+            }
+        }
+        
+        .button-icon {
+            width: 20px;
+            /* Adjust size as needed */
+            height: 20px;
+            margin-right: 8px;
+            /* Space between icon and text */
+            vertical-align: middle;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="position: center;"> FERRIS WHEEL PHOTOGRAPH</h1>
+    <div id="ferris">
+        <div id="wheel">
+
+            <div class="seat" id="seat1">
+
+                <div class="clip"></div>
+
+                <div class="box">
+                    <img src="pic.jpg" class="pic1" alt="Description of image" width="130" height="100">
+                    <div class="door0"></div>
+                    <div class="door1"></div>
+                </div>
+            </div>
+            <div class="seat" id="seat2">
+                <div class="clip"></div>
+                <div class="box">
+                    <img src="baby.jpg" alt="Description of image" class="pic2" width="130" height="100">
+                    <div class="door0"></div>
+                    <div class="door1"></div>
+                </div>
+            </div>
+            <div class="spoke" id="spoke1"></div>
+
+            <div class="seat" id="seat3">
+                <div class="clip"></div>
+                <div class="box">
+                    <img src="red.jpg" alt="Description of image" class="pic3" width="130" height="130">
+                    <div class="door0"></div>
+                    <div class="door1"></div>
+                </div>
+            </div>
+            <div class="seat" id="seat4">
+                <div class="clip"></div>
+                <div class="box">
+                    <img src="414b66ee-c0ba-464f-9ad6-fbfb3e8d8a13.jpg" class="pic3" alt="Description of image" width="130" height="130">
+                    <div class="door0"></div>
+                    <div class="door1"></div>
+                </div>
+            </div>
+            <div class="spoke" id="spoke2"></div>
+
+            <div class="seat" id="seat5">
+                <div class="clip"></div>
+                <div class="box">
+                    <img src="b5e55344-ed5c-4037-9bf7-313346ba8d29.jpg" class="pic4" alt="Description of image" width="130" height="130">
+                    <div class="door0"></div>
+                    <div class="door1"></div>
+                </div>
+            </div>
+            <div class="seat" id="seat6">
+                <div class="clip"></div>
+                <div class="box">
+                    <img src="485485118_1870592683759492_1272576599657958854_n.jpg" class="pic4" alt="Description of image" width="130" height="130">
+                    <div class="door0"></div>
+                    <div class="door1"></div>
+                </div>
+            </div>
+            <div class="spoke" id="spoke3"></div>
+
+            <div class="seat" id="seat7">
+                <div class="clip"></div>
+                <div class="box">
+                    <img src="https://codedamn-blog.s3.amazonaws.com/wp-content/uploads/2022/10/28114018/How-to-resize-image-in-HTML.jpg" alt="Description of image" width="60" height="60">
+                    <div class="door0"></div>
+                    <div class="door1"></div>
+                </div>
+            </div>
+            <div class="seat" id="seat8">
+                <div class="clip"></div>
+                <div class="box">
+                    <img src="https://codedamn-blog.s3.amazonaws.com/wp-content/uploads/2022/10/28114018/How-to-resize-image-in-HTML.jpg" alt="Description of image" width="25" height="25">
+                    <div class="door0"></div>
+                    <div class="door1"></div>
+                </div>
+            </div>
+            <div class="spoke" id="spoke4"></div>
+
+            <div id="wheel0">
+                <div id="wheel1">
+                    <div id="wheel2">
+                        <div id="wheel3">
+                            <div id="wheel4">
+                                <div id="wheel5">
+                                    <div id="wheel6">
+                                        <div id="wheel7"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="stand"></div>
+            <div id="base"></div>
+            <div id="wheel8"></div>
+        </div>
+    </div>
+    <button class="home" onclick="window.open('index.html', '_blank')" class="GFG"> <img src="sakura.png" class="button-icon" alt="icon">GO BACK TO HOME PAGE</button>
+    </section>
+    <script>
+        let vu, pc;
+
+        function init() {
+            vu = (window.innerHeight > window.innerWidth ? window.innerWidth : window.innerHeight) / 100;
+
+            document.getElementById('ferris').style.width = 80 * vu + 'px';
+            document.getElementById('ferris').style.height = 80 * vu + 'px';
+
+            pc = 0.6 * vu;
+        }
+
+        window.addEventListener('load', init);
+
+        window.addEventListener('resize', init);
+
+        let spoke1 = document.getElementById('spoke1');
+        let seat1 = document.getElementById('seat1');
+        let seat2 = document.getElementById('seat2');
+
+        let spoke2 = document.getElementById('spoke2');
+        let seat3 = document.getElementById('seat3');
+        let seat4 = document.getElementById('seat4');
+
+        let spoke3 = document.getElementById('spoke3');
+        let seat5 = document.getElementById('seat5');
+        let seat6 = document.getElementById('seat6');
+
+        let spoke4 = document.getElementById('spoke4');
+        let seat7 = document.getElementById('seat7');
+        let seat8 = document.getElementById('seat8');
+
+        let i = 0;
+        let i2 = 45;
+        let i3 = 90;
+        let i4 = 135;
+
+
+        setInterval(function() {
+
+            i++;
+
+            spoke1.style.transform = 'rotate(' + (i % 360) + 'deg)';
+
+            seat1.style.left = 50 * pc + 48 * pc * Math.sin(i * 3.1416 / 180) + 'px';
+            seat1.style.top = 50 * pc - 48 * pc * Math.cos(i * 3.1416 / 180) + 'px';
+
+            seat2.style.left = 50 * pc - 48 * pc * Math.sin(i * 3.1416 / 180) + 'px';
+            seat2.style.top = 50 * pc + 48 * pc * Math.cos(i * 3.1416 / 180) + 'px';
+
+            i2++;
+
+            spoke2.style.transform = 'rotate(' + (i2 % 360) + 'deg)';
+
+            seat3.style.left = 50 * pc + 48 * pc * Math.sin(i2 * 3.1416 / 180) + 'px';
+            seat3.style.top = 50 * pc - 48 * pc * Math.cos(i2 * 3.1416 / 180) + 'px';
+
+            seat4.style.left = 50 * pc - 48 * pc * Math.sin(i2 * 3.1416 / 180) + 'px';
+            seat4.style.top = 50 * pc + 48 * pc * Math.cos(i2 * 3.1416 / 180) + 'px';
+
+            i3++;
+
+            spoke3.style.transform = 'rotate(' + (i3 % 360) + 'deg)';
+
+            seat5.style.left = 50 * pc + 48 * pc * Math.sin(i3 * 3.1416 / 180) + 'px';
+            seat5.style.top = 50 * pc - 48 * pc * Math.cos(i3 * 3.1416 / 180) + 'px';
+
+            seat6.style.left = 50 * pc - 48 * pc * Math.sin(i3 * 3.1416 / 180) + 'px';
+            seat6.style.top = 50 * pc + 48 * pc * Math.cos(i3 * 3.1416 / 180) + 'px';
+
+            i4++;
+
+            spoke4.style.transform = 'rotate(' + (i4 % 360) + 'deg)';
+
+            seat7.style.left = 50 * pc + 48 * pc * Math.sin(i4 * 3.1416 / 180) + 'px';
+            seat7.style.top = 50 * pc - 48 * pc * Math.cos(i4 * 3.1416 / 180) + 'px';
+
+            seat8.style.left = 50 * pc - 48 * pc * Math.sin(i4 * 3.1416 / 180) + 'px';
+            seat8.style.top = 50 * pc + 48 * pc * Math.cos(i4 * 3.1416 / 180) + 'px';
+
+        }, 33)
+    </script>
+</body>

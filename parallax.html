@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parallax Clouds</title>
+    <style>
+        body {
+            margin: 0;
+            overflow-x: hidden;
+            background-color: #87CEEB;
+            /* Light blue sky */
+        }
+        
+        .parallax-container {
+            position: relative;
+            height: 100vh;
+            overflow: hidden;
+        }
+        
+        .cloud {
+            position: absolute;
+            width: 200px;
+            /* Adjust size as needed */
+            opacity: 0.7;
+        }
+        
+        .cloud-1 {
+            top: 10%;
+            left: 5%;
+        }
+        
+        .cloud-2 {
+            top: 30%;
+            left: 50%;
+        }
+        
+        .cloud-3 {
+            top: 50%;
+            left: 20%;
+        }
+        
+        .cloud-4 {
+            top: 70%;
+            left: 70%;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="parallax-container">
+        <img src="cloud1.webp" class="cloud cloud-1">
+        <img src="cloud1.webp" class="cloud cloud-2">
+        <img src="cloud1.webp" class="cloud cloud-3">
+        <img src="cloud1.webp" class="cloud cloud-4">
+        <div class="content" style="height: 200vh; background: white; text-align: center;">
+            <h2>Scroll Down to See the Effect</h2>
+            <p>Keep scrolling to see the clouds move!</p>
+        </div>
+
+    </div>
+    <div class="content" style="height: 200vh; background: white; text-align: center;">
+        <h2>Scroll Down to See the Effect</h2>
+        <p>Keep scrolling to see the clouds move!</p>
+    </div>
+
+
+    <script>
+        window.addEventListener("scroll", function() {
+            let scrollValue = window.scrollY;
+
+            document.querySelector(".cloud-1").style.transform = `translateX(${scrollValue * 0.5}px)`;
+            document.querySelector(".cloud-2").style.transform = `translateX(${scrollValue * -0.4}px)`;
+            document.querySelector(".cloud-3").style.transform = `translateX(${scrollValue * 0.3}px)`;
+            document.querySelector(".cloud-4").style.transform = `translateX(${scrollValue * -0.6}px)`;
+        });
+    </script>
+
+</body>
+
+</html>

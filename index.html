@@ -1,0 +1,1230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!--THIS IS THE HEAD-->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="icon" type="image/png" href="shortcake.png">
+    <title>PRECIOUS GALLERY</title>
+    <style>
+        /*author: Precious Candy Abillonar Prado*/
+        /*title: PRECIOUS PORTFOLIO GALLERY*/
+        /* Global cyberpunk styles */
+        /*below are the css color, customizations, and other modifications*/
+        
+        body {
+            background-image: url("strawberry.jpg");
+            background-attachment: fixed;
+            z-index: 1;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: 'Orbitron', sans-serif;
+            /* A futuristic font, include via Google Fonts if desired */
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        /* Custom cursor */
+        
+        .custom-cursor {
+            position: fixed;
+            width: 50px;
+            /* Adjust size */
+            height: 50px;
+            pointer-events: none;
+            transform: scale(0.5);
+            /* Scale down without changing the image */
+            z-index: 9999;
+        }
+        
+        html {
+            height: 100%;
+        }
+        /* Neon glow animation for header */
+        
+        @keyframes neonGlow {
+            0%,
+            100% {
+                text-shadow: 0 0 5px #ff00ff, 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+            }
+            50% {
+                text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff, 0 0 30px #ff00ff;
+            }
+        }
+        
+        header {
+            background-color: rgba(0, 0, 0, 0.85);
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.7);
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            animation: neonGlow 2s ease-in-out infinite;
+            color: #ff00ff;
+        }
+        
+        .gallery {
+            background-image: url("leopard-skin-pink-seamless-pattern-vector.jpg");
+        }
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        nav ul li {
+            margin: 0;
+        }
+        
+        #contact {
+            background-image: url("leo.jpg");
+        }
+        
+        nav ul li a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #00ffff;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+            box-shadow: 0 0 10px #00ffff;
+        }
+        
+        nav ul li a:hover {
+            background-color: #00a3a3;
+            transform: translateY(-3px);
+        }
+        /* Cyberpunk animated border for the clooned container */
+        
+        @keyframes borderGlow {
+            0%,
+            100% {
+                border-color: #ff00ff;
+                box-shadow: 0 0 10px #ff00ff;
+            }
+            50% {
+                border-color: #00ffff;
+                box-shadow: 0 0 20px #00ffff;
+            }
+        }
+        
+        .text-content {
+            float: right;
+            width: 50%;
+        }
+        
+        .clooned-container {
+            width: 50%;
+            max-width: 500px;
+            position: absolute;
+            left: 10px;
+            float: left;
+            top: 20px;
+            padding: 10px;
+            box-sizing: border-box;
+            border: 5px solid;
+            animation: borderGlow 3s infinite;
+            background-image: url("9586846990183c06e768204cd0593eee.gif");
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position: relative;
+            /* For any future pseudo-elements */
+            z-index: 1;
+        }
+        /* About Me Section Styling */
+        
+        .about-me {
+            position: relative;
+            font-size: 20px;
+            margin: 20px;
+            text-align: center;
+            background-color: white;
+            color: rgba(0, 0, 0, 0.9);
+            text-shadow: 2px 2px 5px red;
+            padding: 20px;
+            border-radius: 10px;
+            /* A subtle animation to change background color */
+            animation: bgPulse 5s infinite alternate;
+        }
+        
+        @keyframes bgPulse {
+            from {
+                background-color: rgba(243, 242, 240, 0.8);
+            }
+            to {
+                background-color: rgba(236, 235, 232, 0.8);
+            }
+        }
+        /* Section Tiles, Gallery, Footer, etc. (kept unchanged) */
+        
+        .tile {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #ddd;
+        }
+        
+        .tile:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: rgba(44, 62, 80, 0.9);
+            color: #fff;
+            width: 100%;
+            margin-top: 20px;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        .gallery {
+            background-image: url("pinkcyber.avif");
+        }
+        
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            background-image: url("pinkcyber.avif");
+        }
+        
+        .gallery-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item img:hover {
+            transform: scale(1.1);
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        #about p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        #contact ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        #contact ul li {
+            margin: 10px 0;
+        }
+        
+        #contact ul li a {
+            color: #1abc9c;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        
+        #contact ul li a:hover {
+            color: #16a085;
+        }
+        
+        diva {
+            width: 100px;
+            height: 100px;
+            position: relative;
+            animation-name: example;
+            animation-duration: 4s;
+            animation-iteration-count: infinite;
+        }
+        
+        @keyframes example {
+            0% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+            25% {
+                background-color: yellow;
+                left: 200px;
+                top: 0px;
+            }
+            50% {
+                background-color: blue;
+                left: 200px;
+                top: 200px;
+            }
+            75% {
+                background-color: green;
+                left: 0px;
+                top: 200px;
+            }
+            100% {
+                background-color: red;
+                left: 0px;
+                top: 0px;
+            }
+        }
+        
+        .heady {
+            background-image: url("R.png");
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-color: #000;
+        }
+        
+        .lights {
+            --color-1: 255, 249, 82;
+            --color-2: 0, 234, 255;
+            --color-3: 247, 0, 148;
+            display: flex;
+            justify-content: center;
+            flex-flow: wrap;
+            gap: 30px 40px;
+            padding: 30px 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+        
+        .lights li {
+            flex: none;
+            position: relative;
+            list-style: none;
+            width: 15px;
+            height: 30px;
+            border-radius: 50%;
+        }
+        
+        #contact {
+            font-size: 29px;
+            position: center;
+        }
+        
+        .lights li:before {
+            position: absolute;
+            content: "";
+            top: -5px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 10px;
+            background-color: #222;
+            border-radius: 100%;
+        }
+        
+        .lights li:after {
+            position: absolute;
+            content: "";
+            z-index: -1;
+            top: -2px;
+            left: 50%;
+            width: 54px;
+            height: 1px;
+            border-bottom: 1px solid #222;
+            border-radius: 100%;
+        }
+        
+        .lights li:last-child:after {
+            display: none;
+        }
+        
+        .lights li {
+            background-color: rgba(var(--color-1), 1);
+            box-shadow: 0 5px 24px 3px rgba(var(--color-1), 1);
+            animation: lighting-1 1.25s infinite linear;
+        }
+        
+        @keyframes lighting-1 {
+            50% {
+                background-color: rgba(var(--color-1), 0.25);
+                box-shadow: 0 5px 24px 3px rgba(var(--color-1), 0.25);
+            }
+        }
+        
+        .lights li:nth-child(odd) {
+            /* 1, 3, 5, ... */
+            background-color: rgba(var(--color-2), 1);
+            box-shadow: 0 5px 24px 3px rgba(var(--color-2), 0.8);
+            animation: lighting-2 1.5s infinite linear;
+        }
+        
+        @keyframes lighting-2 {
+            50% {
+                background-color: rgba(var(--color-2), 0.4);
+                box-shadow: 0 5px 24px 3px rgba(var(--color-2), 0.3);
+            }
+        }
+        
+        .lights li:nth-child(4n+2) {
+            /* 2, 6, 10, 14, ... */
+            background-color: rgba(var(--color-3), 1);
+            box-shadow: 0 5px 24px 3px rgba(var(--color-3), 1);
+            animation: lighting-3 1.5s infinite linear;
+            animation-delay: 1.25s;
+        }
+        
+        @keyframes lighting-3 {
+            50% {
+                background-color: rgba(var(--color-3), 0.25);
+                box-shadow: 0 5px 24px 3px rgba(var(--color-3), 0.25);
+            }
+        }
+        
+        .heady {
+            height: 210px;
+            background-image: url("crown.png");
+        }
+        
+        .out {
+            background-image: url("573c8f69e15f1ed94d4bbfcd360982e6.png");
+            background-repeat: no-repeat;
+        }
+        
+        .cast {
+            z-index: 1;
+            width: 50px;
+            height: 50px;
+            position: absolute;
+            bottom: 0;
+            background-color: orange;
+        }
+        
+        .castle {
+            position: relative;
+            display: block;
+            float: 6% right;
+        }
+        
+        .txt {
+            text-align: right;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 50px;
+            margin: 0
+        }
+        
+        #typing-text {
+            font-size: 20px;
+            white-space: pre-line;
+            /* Preserves line breaks */
+            text-align: left;
+            display: inline-block;
+        }
+        
+        .container {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        h1 {
+            font-size: 3em;
+            text-shadow: 0 0 10px #ff66b2;
+            animation: glow 1.5s infinite alternate;
+        }
+        
+        @keyframes glow {
+            0% {
+                text-shadow: 0 0 10px #ff66b2, 0 0 20px #ff99cc;
+            }
+            100% {
+                text-shadow: 0 0 15px #ff99cc, 0 0 25px #ff66b2;
+            }
+        }
+        
+        .profile-card {
+            background: rgba(255, 102, 178, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 0 15px #ff66b2;
+            width: 350px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            margin: 20px 0;
+        }
+        
+        .profile-card img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            border: 3px solid #ff66b2;
+            box-shadow: 0 0 10px #ff99cc;
+            margin-bottom: 10px;
+        }
+        
+        .profile-card h2 {
+            margin-bottom: 10px;
+        }
+        
+        .profile-card p {
+            margin: 5px 0;
+        }
+        
+        .buttons {
+            margin-top: 15px;
+            background-color: #fbeee0;
+            border: 2px solid #422800;
+            border-radius: 30px;
+            box-shadow: #422800 4px 4px 0 0;
+            color: #422800;
+            cursor: pointer;
+            display: inline-block;
+            font-weight: 600;
+            font-size: 18px;
+            padding: 0 18px;
+            line-height: 50px;
+            text-align: center;
+            text-decoration: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            background-image: url('sakura.png');
+            background-size: 20px 20px;
+            /* Adjust size */
+            background-repeat: no-repeat;
+            background-position: left center;
+            padding-left: 30px;
+            width: 200px;
+            height: 50px;
+            /* Space for the icon */
+        }
+        /* CSS */
+        
+        .buttons::before {
+            content: "";
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background-image: url('sakura.png');
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin-right: 10px;
+        }
+        /*for buttons */
+        
+        .neon-button {
+            background-color: #fbeee0;
+            border: 2px solid #422800;
+            border-radius: 30px;
+            box-shadow: #422800 4px 4px 0 0;
+            color: #422800;
+            cursor: pointer;
+            display: inline-block;
+            font-weight: 600;
+            font-size: 18px;
+            padding: 0 18px;
+            line-height: 50px;
+            text-align: center;
+            text-decoration: none;
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            background-image: url('sakura.png');
+            background-size: 20px 20px;
+            /* Adjust size */
+            background-repeat: no-repeat;
+            background-position: left center;
+            padding-left: 30px;
+            width: 200px;
+            height: 50px;
+        }
+        
+        .neon-button:hover {
+            background-color: #fff;
+        }
+        
+        .neon-button:active {
+            box-shadow: #422800 2px 2px 0 0;
+            transform: translate(2px, 2px);
+        }
+        
+        @media (min-width: 768px) {
+            .button-74 {
+                min-width: 120px;
+                padding: 0 25px;
+            }
+        }
+        
+        .heart {
+            position: fixed;
+            /* Ensure it's visible on screen */
+            top: 0;
+            left: 50%;
+            color: red;
+            font-size: 10px;
+            user-select: none;
+            z-index: 9999;
+            /* Ensure it's above other elements */
+            animation: fall 5s linear infinite;
+            background: none;
+            /* If blending with the background */
+        }
+        
+        .heart {
+            width: 100px;
+            height: 100px;
+            font-size: 100px;
+        }
+        
+        @keyframes fall {
+            0% {
+                transform: translateY(-10%);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh);
+                opacity: 0;
+            }
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+         :root {
+            --bg: 25% 0.0075 70;
+            --pink: 77.75% 0.1003 350.51;
+            --gold: 84.16% 0.1169 71.19;
+            --mint: 84.12% 0.1334 165.28;
+            --mobile--w: 360px;
+            --mobile--h: 540px;
+            --outline-w: 9px;
+            --preview-bg: #fff;
+        }
+        
+        .preview__container {
+            display: flex;
+            flex-wrap: wrap;
+            place-items: center;
+            place-content: center;
+            height: 100%;
+            /* fade out other cards when one is :hover/:focus-within */
+            /* &:has(:hover,
+            : focus-within) {
+                .preview:not(:hover, : focus) {
+                    opacity: 0.4;*/
+        }
+        
+        .preview {
+            --bg-pos-y--start: 0;
+            --bg-pos-y--end: 0;
+            --bg-pos-y: var(--bg-pos-y--start);
+            --delay: 0;
+            --duration: 6s;
+            --shadow-blur: 24px;
+            --shadow-color: oklch(var(--bg));
+            background-clip: padding-box;
+            /* 	background-origin: content-box; */
+            background-image: var(--img);
+            background-position-y: var(--bg-pos-y);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            border: var(--outline-w) solid var(--border-color, transparent);
+            border-radius: 6px;
+            box-shadow: 0 0 var(--shadow-blur) 0 var(--shadow-color);
+            transition-property: border, box-shadow, filter, outline-offset, opacity, rotate, scale, z-index;
+            transition-duration: 0.15s, 0.15s, 0.6s, 0.6s, 0.3s, 0.3s, 0.3s, 0.15s;
+            filter: grayscale(100%) sepia(5%);
+            mix-blend-mode: multiply;
+            opacity: 0.69;
+            /* 		backface-visibility: hidden;
+	transform: translateZ(0) perspective(1px); */
+            /* 	transform-origin: center center; */
+            scale: 0.85;
+            rotate: var(--rotation, -4deg);
+            /* 	will-change: box-shadow, filter, rotate, scale, z-index; */
+            outline: var(--outline-w) solid var(--preview-bg);
+            outline-offset: var(--outline-w);
+            min-height: var(--mobile--h);
+            height: 100%;
+            min-width: var(--mobile--w);
+            width: 100%;
+            position: relative;
+            animation-name: bg-scroll;
+            animation-delay: var(--delay);
+            animation-duration: var(--duration);
+            animation-fill-mode: forwards;
+            &:focus-within,
+            &:hover {
+                --shadow-blur: 200px;
+                --shadow-color: oklch(var(--gold));
+                --border-color: var(--shadow-color);
+                background-color: rgba(255, 255, 255, 0.568);
+                mix-blend-mode: initial;
+                filter: none;
+                opacity: 1;
+                outline-offset: calc(var(--outline-w) / 2);
+                scale: 1;
+                rotate: 0deg;
+                transition-property: border, box-shadow, filter, outline-offset, opacity, rotate, scale, z-index;
+                transition-duration: 0.15s, 0.15s, 0.3s, 0.3s, 0.3s, 0.3s, 0.3s, 0.15s;
+            }
+            &:focus-within {
+                --shadow-color: oklch(var(--pink));
+                z-index: 5;
+            }
+            &:hover {
+                z-index: 6;
+                &:focus {
+                    --shadow-color: oklch(var(--mint));
+                }
+            }
+            &.mobile {
+                max-height: var(--mobile--h);
+                max-width: var(--mobile--w);
+            }
+            &:nth-of-type(2) {
+                --bg-pos-y--end: calc(var(--mobile--h) * -1.025);
+                /*       --delay: .25s; */
+                --rotation: 3deg;
+            }
+            &:nth-of-type(3) {
+                --bg-pos-y--end: calc(var(--mobile--h) * -2.25);
+                /*       --delay: .5s; */
+                --duration: 6.5s;
+                --rotation: -1deg;
+            }
+            &:nth-of-type(4) {
+                --bg-pos-y--end: calc(var(--mobile--h) * -3.75);
+                /*       --delay: .75s; */
+                --duration: 6.75s;
+                --rotation: -5deg;
+            }
+            &:nth-of-type(5) {
+                --bg-pos-y--end: calc(var(--mobile--h) * -4.82);
+                /*       --delay: 1s; */
+                --duration: 7s;
+                --rotation: -2deg;
+            }
+            &:nth-of-type(6) {
+                --bg-pos-y--end: calc(var(--mobile--h) * -5.85);
+                /*       --delay: 1.25s; */
+                --duration: 7.25s;
+                --rotation: 2deg;
+            }
+            &:nth-of-type(7) {
+                --bg-pos-y--end: calc(var(--mobile--h) * -7.21);
+                /*       --delay: 1.5s; */
+                --duration: 7.5s;
+                --rotation: 4deg;
+            }
+        }
+        /* preview-scroll */
+        
+        @keyframes bg-scroll {
+            to {
+                background-position-y: var(--bg-pos-y--end);
+            }
+        }
+        
+        .header-img {
+            position: absolute;
+            top: 0;
+            right: 0;
+            height: 130px;
+            /* Adjust size as needed */
+            width: auto;
+            /* Maintains aspect ratio */
+        }
+        
+        .quote-box {
+            background-color: #d2b48c;
+            /* Light brown */
+            color: #4a3f35;
+            /* Dark brown text */
+            font-family: 'Cursive', sans-serif;
+            font-size: 20px;
+            padding: 20px;
+            border-left: 5px solid #8b5a2b;
+            /* Darker brown border */
+            max-width: 600px;
+            margin: 20px auto;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+        
+        body {
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-color: #fde2e4;
+        }
+        
+        .cloud {
+            position: absolute;
+            width: 150px;
+            /* Adjust if needed */
+            opacity: 0.8;
+            transition: transform 0.2s ease-out;
+            size: 250px;
+        }
+        
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 350px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.5);
+            display: none;
+            z-index: 1000;
+        }
+        
+        .popup-content {
+            padding: 20px;
+            color: black;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            border-radius: 10px;
+            background-size: cover;
+            background-position: center;
+            min-height: 300px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+            float: top, left;
+        }
+        
+        .moving-image {
+            position: absolute;
+            width: 60px;
+            transition: transform 1s linear;
+            /* Smooth movement */
+        }
+        
+        .cloud {
+            position: absolute;
+            width: 200px;
+            opacity: 0.8;
+        }
+        
+        .cloud1 {
+            top: 10%;
+            left: 20%;
+        }
+        
+        .cloud2 {
+            top: 30%;
+            left: 50%;
+        }
+        
+        .cloud3 {
+            top: 50%;
+            left: 70%;
+        }
+    </style>
+</head>
+
+<body>
+    <!--ITS SUPPOSED TO BE AN AUDIO AUTOPLAY, MAKE SURE TO ALLOW IT IN YOUR USED BROWSER -->
+    <!--music choise by mama-->
+    <audio controls>
+        <source src="rose.mp3" type="audio" />
+      </audio>
+
+    <audio id="myAudio">
+        <source src="rose.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <button onclick="playAudio()">Play</button>
+    <button onclick="pauseAudio()">Pause</button>
+
+    <script>
+        var audio = document.getElementById("myAudio");
+
+        function playAudio() {
+            audio.play().catch(error => console.error("Playback failed:", error));
+        }
+
+        function pauseAudio() {
+            audio.pause();
+        }
+    </script>
+
+
+
+    <!--Thiss is the header/ head-->
+    <header class="heady">
+
+        <ul class="lights">
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+            <li></li>
+
+        </ul>
+        <div style="position: relative; height: 300px; border: 1px solid #ccc;">
+
+            <img style="z-index: -2; position: absolute; bottom:0 ; right: 0; width:50px height=50px" src="shortcake.png" alt="Description of the image">
+
+            <h1>
+
+
+                Precious Candy Prado's Gallery</h1>
+            <nav class="leo">
+                <ul>
+                    <li><a href="#about" class="neon-button" onclick="showSection('about')">About Me</a></li>
+                    <li><a href="#contact" class="neon-button" onclick="showSection('contact')">Contacts</a></li>
+                    <li><a href="#gallery" class="neon-button" onclick="showSection('gallery')">Photo Gallery</a></li>
+                    <li><a href="comments" class="neon-button" onclick="window.open('commentsection.html', '_blank')"> Write </a></li>
+                    <li><a href="pictures" class="neon-button" onclick="window.open('ex.html', '_blank')"> My Photos</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <div class="txt">
+        <p style="direction: rtl;"></p>
+    </div>
+    <!-- Include the clooned script -->
+
+    <div id="clooned-3d-model" data-src="your-model.glb" data-autospin="true" data-speed="1" data-infinite="true">
+        <script src="https://clooned.com/wp-content/uploads/cloons/scripts/clooned.js"></script>
+        <!-- Container for the 3D model -->
+    </div>
+
+    <div class="out">
+        <div class="clooned-container">
+            <script src="https://clooned.com/wp-content/uploads/cloons/scripts/clooned.js"></script>
+            <clooned-object features="lsc;dt;fs" oid="c8bd9f4079334fb2a2956ab5d3636dbc"></clooned-object>
+
+        </div>
+    </div>
+
+    <!--heart anim-->
+    <section id="comments" class="tile hidden">
+        <div id="respond">
+            <h3>Leave A Response</h3>
+            <p>Your email address will not be published with your comments.</p>
+            <form id="commentForm" method="post" class="cmxform">
+                <div class="commentfields">
+                    <label class="name">Name <span>*</span></label>
+                    <input name="name" id="cname" class="comment-input required" type="text">
+                </div>
+                <div class="commentfields">
+                    <label class="email">Email <span>*</span></label>
+                    <input name="email" id="cemail" class="comment-input required email" type="text">
+                </div>
+                <div class="commentfields">
+                    <label class="website">Website</label>
+                    <input name="website" class="comment-input" type="text">
+                </div>
+                <div class="commentfields">
+                    <label>Comments <span>*</span></label>
+                    <textarea id="ccomment" class="comment-textarea required" name="comment"></textarea>
+                </div>
+                <div class="commentfields">
+                    <input class="commentbtn" type="submit" value="Post Comment">
+                </div>
+            </form>
+        </div>
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+
+    <!--My Introduction about myself-->
+
+
+    <div class="about-me">
+        <h6>ABOUT ME</h6>
+        <p style="font-family: Brush Script MT, Brush Script Std, cursive; font-size: 30px;">
+            <img class="header-img" src="mariposa.gif" alt="Header Image"> Hello, my name is Precious Candy Abillonar Prado. I'm a Senior High School Grade 11 student with a passion for exploring languages and connecting with people from around the world.
+            Ever since I was very little, I've been fascinated with learning languages and reading.<br> At 12, I discovered Arduino, which opened my eyes to computer programming and electronics—sparking a lifelong love for mathematics, my favorite subject.
+            I also enjoy creative hobbies like playing with dolls and sewing adorable coquette dresses for them.<br> I'm inspired by authors such as Mary Shelley and Taylor Caldwell, and I love listening to Russian and French songs. My interests extend
+            into the world of horror and gothic aesthetics, and I find joy in playing Sims 4, playing the ukulele and flute,<br> skating, painting with gouache in my little sketchbook, practicing calligraphy, and even experimenting with cyberpunk aesthetics.<br>            Writing is a constant in my life. I not only keep a diary to capture my thoughts and dreams, but I also write about my nightmares, transforming them into stories that help me express my deepest emotions.<br> I invite you to explore my portfolio
+            gallery and join me on this exciting journey of learning, creativity, and self-expression. Additionally, I love history and gothic surrealism stories. For instances, I am also interested in historical stories of donners party, marie antoinette,
+            <br> marie antoinette, moctezuma 2, aztecs and the tragic history of black death.<br>Moreover, When I grow up I want to be a successful kernel developer and a neurosurgeon
+        </p>
+
+    </div>
+    <!-- Contact & Social Media Section -->
+    <section id="contact" class="tile hidden" style="position: center;">
+        <h2>Contact & Social Media</h2>
+        <p>If you'd like to connect with me, feel free to reach out via email or follow me on social media:</p>
+        <ul>
+            <li>Email: <a href="mailto:your.email@example.com">preciouscandyprado@goodsam.edu.ph</a></li>
+            <li>Instagram: <a href="https://instagram.com/yourprofile">@prscdy678</a></li>
+            <li>Youtube: <a href="https://www.youtube.com/@candy7333">candy7333</a></li>
+            <li>Github: <a href="">anonymousscriptkiddie</a></li>
+
+        </ul>
+
+    </section>
+    <img src="mariposa.gif" alt="Moving Image" class="moving-image" id="movingImage">
+    <div class="quote-box">
+        <h5> My favorite dark quote</h5>
+        <p><em>“In many places in Siena, great pits were dug and piled deep with the multitude of dead. I... buried my five children with my own hands.”</em></p>
+        <p>- The Black Death, 1348</p>
+    </div>
+    <div class="container">
+        <h1>Prexcious' Coquette Cyberpunk Profile</h1>
+        <div class="profile-card">
+            <img src="girl.webp" alt="Profile Picture">
+            <h2>About Me</h2>
+            <p><strong>Name:</strong> Precious</p>
+            <p><strong>Age:</strong> 16 years old</p>
+            <p><strong>Location:</strong> Barangay Bago, General Tinio, Nueva Ecija, Philippines</p>
+            <h2>Hobbies</h2>
+            <p>Coding a little| Calligraphy | Animation | Scrabble | Books | Electronics | Dolls| History</p>
+            <div class="buttons">
+                <button class="neon-button" onclick="openPopup('popup-coding')">Coding</button>
+                <button class="neon-button" onclick="openPopup('popup-calligraphy')">Calligraphy</button>
+                <button class="neon-button" onclick="openPopup('popup-animation')">Animation</button>
+                <button class="neon-button" onclick="openPopup('popup-scrabble')">Scrabble</button>
+                <button class="neon-button" onclick="openPopup('popup-history')">History</button>
+            </div>
+
+            <!-- Popups -->
+            <div id="popup-coding" class="popup">
+                <div class="popup-content" style="background-image: url('window.jpg');">
+                    <button class="close-btn" onclick="closePopup('popup-coding')">✖</button>
+                    <p style="color: black;">More about my coding projects coming soon!</p>
+                </div>
+            </div>
+
+            <div id="popup-calligraphy" class="popup">
+                <div class="popup-content" style="background-image: url('pinkwin.png');">
+                    <button class="close-btn" onclick="closePopup('popup-calligraphy')">✖</button>
+                    <p>Exploring calligraphy styles!</p>
+                </div>
+            </div>
+
+            <div id="popup-animation" class="popup">
+                <div class="popup-content" style="background-image: url('pinkwin.png');">
+                    <button class="close-btn" onclick="closePopup('popup-animation')">✖</button>
+                    <p>Making animation sometimes using Mineimator.</p>
+                </div>
+            </div>
+
+            <div id="popup-scrabble" class="popup">
+                <div class="popup-content" style="background-image: url('pinkwin.png');">
+                    <button class="close-btn" onclick="closePopup('popup-scrabble')">✖</button>
+                    <p>Let's play Scrabble!</p>
+                </div>
+            </div>
+
+            <div id="popup-history" class="popup">
+                <div class="popup-content" style="background-image: url('pinkwin.png');">
+                    <button class="close-btn" onclick="closePopup('popup-history')">✖</button>
+                    <p>I like tragic history.</p>
+                </div>
+            </div>
+        </div>
+        <img src="cloud1.webp" class="cloud cloud1" id="cloud1">
+        <img src="cloud1.webp" class="cloud cloud2" id="cloud2">
+        <img src="cloud1.webp" class="cloud cloud3" id="cloud3">
+
+        <script>
+            window.addEventListener("scroll", function() {
+                let scrollY = window.scrollY;
+                document.getElementById("cloud1").style.transform = `translateX(${scrollY * 0.3}px)`;
+                document.getElementById("cloud2").style.transform = `translateX(${scrollY * -0.2}px)`;
+                document.getElementById("cloud3").style.transform = `translateX(${scrollY * 0.4}px)`;
+            });
+        </script>
+        <div class="diva"> </div>
+
+    </div>
+
+    </h2>
+    </div>
+    <div class="profile-card">
+        <h2>More Info</h2>
+        <!--THIS IS JUST DESIGN-->
+        <p>This is a test section to ensure scrolling works!</p>
+    </div>
+
+
+    <!-- Photo Gallery Section -->
+    <section id="gallery" class="tile hidden">
+        <h2>Photo Gallery</h2>
+        <div class="gallery-container">
+            <div class="gallery-item"><img src="485470560_856077153319006_5085476708029074997_n.jpg" alt="photo1"></div>
+            <div class="gallery-item"><img src="483911011_1281688492929165_1228487721966868426_n.jpg" alt="photo2"></div>
+            <div class="gallery-item"><img src="483889412_1785771201990747_8830959694095705122_n.jpg" alt="photo3"></div>
+            <div class="gallery-item"><img src="484213740_679499424510668_4454581039173924319_n.jpg" alt="Photo 4"></div>
+            <div class="gallery-item"><img src="sister.png" alt="Photo 5"></div>
+            <div class="gallery-item"><img src="476147605_1699225853993498_3873099500189458032_n.jpg" alt="Photo 6"></div>
+            <div class="gallery-item"><img src="486185941_637320769093433_401943977722310284_n.jpg" alt="Photo 7"></div>
+            <div class="gallery-item"><img src="482905251_2074557656399385_4006739765457912944_n.jpg" alt="Photo 8"></div>
+            <div class="gallery-item"><img src="485214172_1373140300697512_5171695485182758363_n.jpg" alt="Photo 9"></div>
+            <div class="gallery-item"><img src="484318361_1025525546116749_2635451583042005618_n.jpg" alt="Photo 10"></div>
+            <div class="gallery-item"><img src="484413360_1039436961338387_9039427114078538420_n.jpg" alt="Photo 11"></div>
+            <div class="gallery-item"><img src="486147257_1756703981578849_1695300656263956294_n.jpg" alt="Photo 12"></div>
+            <div class="gallery-item"><img src="485954357_590090753801886_7577626001580482865_n.jpg" alt="Photo 12"></div>
+            <div class="gallery-item"><img src="484746758_1300835114325398_7697821249729918864_n.jpg" alt="photo 12" </div>
+                <div class="scene">
+
+                </div>
+
+
+    </section>
+
+    </div>
+    <section class="preview__container" style="--img: url(https://assets.codepen.io/2392/360__homepage--full.png)">
+        <article class="preview mobile" tabindex="0"></article>
+        <article class="preview mobile" tabindex="0"></article>
+        <article class="preview mobile" tabindex="0"></article>
+        <article class="preview mobile" tabindex="0"></article>
+        <article class="preview mobile" tabindex="0"></article>
+        <article class="preview mobile" tabindex="0"></article>
+        <article class="preview mobile" tabindex="0"></article>
+    </section>
+    <div id="videos" class="tile hidden">
+        <h2>My Videos</h2>
+        <!-- Add content related to videos here -->
+    </div>
+    <footer>
+        <p>&copy; 2025 [Precious Candy Abillonar Prado]. All rights reserved.</p>
+    </footer>
+    <script>
+        // importing gsap is postponed
+
+        // JavaScript to toggle sections
+
+        // Dont mind the heart, this is an edited code 
+        function createHeart() {
+            console.log("Creating strawberries..");
+
+            const heart = document.createElement("div");
+            heart.innerHTML = "🍓";
+            heart.classList.add("heart");
+
+            // Ensure hearts appear at random positions
+            heart.style.left = Math.random() * window.innerWidth + "px";
+            heart.style.top = "0px";
+            heart.style.fontSize = Math.random() * 20 + 10 + "px";
+            heart.style.animationDuration = Math.random() * 3 + 2 + "s";
+
+            document.body.appendChild(heart);
+            console.log("STRAWBERRIES added to DOM at", heart.style.left);
+
+            // Remove strawberries after animation
+            setTimeout(() => {
+                console.log("Removing heart...");
+                heart.remove();
+            }, 5000);
+        }
+
+        // Generate multiple strawberries at an interval
+        setInterval(createHeart, 300);
+
+        // Move cursor element with mouse
+        document.addEventListener("mousemove", function(e) {
+            let cursor = document.getElementById("cursor");
+            cursor.style.left = e.pageX + "px";
+            cursor.style.top = e.pageY + "px";
+        });
+
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('.tile').forEach(section => {
+                section.classList.add('hidden');
+            });
+
+            // Show the selected section
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+        window.addEventListener("scroll", function() {
+            let scrollPos = window.scrollY;
+            document.querySelector(".cloud-1").style.transform = `translateY(${scrollPos * 0.3}px)`;
+            document.querySelector(".cloud-2").style.transform = `translateY(${scrollPos * 0.5}px)`;
+            document.querySelector(".cloud-3").style.transform = `translateY(${scrollPos * 0.7}px)`;
+        });
+
+        function openPopup(id) {
+            document.getElementById(id).style.display = "block";
+        }
+
+        function closePopup(id) {
+            document.getElementById(id).style.display = "none";
+        }
+
+        function moveImage() {
+            let img = document.getElementById("movingImage");
+            let x = Math.random() * (window.innerWidth - img.width);
+            let y = Math.random() * (window.innerHeight - img.height);
+            img.style.left = x + "px";
+            img.style.top = y + "px";
+        }
+
+        setInterval(moveImage, 1000); // Moves every 1 second
+    </script>
+
+
+
+</body>
+
+</html>

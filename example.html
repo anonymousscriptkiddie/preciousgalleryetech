@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Gallery</title>
+    <style>
+        /* General Styles */
+        
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: #2c3e50;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+        }
+        /* Navigation Buttons */
+        
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 20px 0 0;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+        
+        nav ul li {
+            margin: 0;
+        }
+        
+        nav ul li a {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #1abc9c;
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        nav ul li a:hover {
+            background-color: #16a085;
+            transform: translateY(-3px);
+        }
+        /* Section Tiles */
+        
+        .tile {
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 800px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid #ddd;
+        }
+        
+        .tile:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        }
+        
+        footer {
+            text-align: center;
+            padding: 15px;
+            background-color: #2c3e50;
+            color: #fff;
+            width: 100%;
+            margin-top: 20px;
+            box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
+        }
+        /* Gallery Styles */
+        
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 15px;
+        }
+        
+        .gallery-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            text-align: center;
+            background-color: #f9f9f9;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+        
+        .gallery-item img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item img:hover {
+            transform: scale(1.1);
+        }
+        /* Hidden Sections */
+        
+        .hidden {
+            display: none;
+        }
+        /* About Me Section */
+        
+        #about p {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        /* Contact Section */
+        
+        #contact ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        #contact ul li {
+            margin: 10px 0;
+        }
+        
+        #contact ul li a {
+            color: #1abc9c;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        
+        #contact ul li a:hover {
+            color: #16a085;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>RAYMOND BARNACHA</h1>
+        <nav>
+            <ul>
+                <li><a href="#about" onclick="showSection('about')">About Me</a></li>
+                <li><a href="#contact" onclick="showSection('contact')">Contact & Social Media</a></li>
+                <li><a href="#gallery" onclick="showSection('gallery')">Photo Gallery</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- About Me Section -->
+    <section id="about" class="tile">
+        <h2>About Me</h2>
+        <p>Hi there! I’m a passionate computer teacher who finds joy in sharing knowledge about technology while also indulging in my love for video games. With a strong background in computer education, I aim to inspire and guide students in understanding
+            the ever-evolving digital world. Whether it’s teaching fundamental computing concepts, digital design, or programming, I always strive to create engaging and interactive lessons that make learning both exciting and practical. Ever since I
+            was young, I’ve been fascinated with computers and gaming. My journey started with classics like *Warcraft III*, which not only entertained me but also sparked my interest in strategic thinking and problem-solving. Over the years, my passion
+            for video games evolved, leading me to *Dota 2*, a game that taught me the value of teamwork, strategy, and adaptability—skills that I apply in both my professional and personal life. These games have given me a deep appreciation for how technology
+            and creativity merge to create immersive experiences, and I love incorporating these concepts into my teaching methods. As a full-time computer teacher, I am dedicated to equipping students with the digital skills they need to thrive in today’s
+            tech-driven society. I believe that technology is not just a tool but a gateway to endless possibilities. In my classes, I encourage students to explore different aspects of computing, from understanding hardware components to coding their
+            own programs and even dabbling in digital design. I integrate hands-on activities and group collaboration exercises to make learning more interactive and enjoyable. Seeing my students develop confidence in their computer skills is one of the
+            most rewarding aspects of my profession. One of the best parts of being a teacher is the opportunity to blend my passion for gaming with education. I often draw parallels between gaming and problem-solving in computing, helping students see
+            the relevance of skills such as critical thinking, decision-making, and resource management. I also advocate for responsible gaming, teaching students how to balance their digital life with other important aspects of their growth and development.
+            Outside of teaching, I enjoy immersing myself in the gaming world, keeping up with *Dota 2* professional teams and tournaments. The competitive scene of esports fascinates me, and I love discussing game strategies, mechanics, and updates with
+            fellow enthusiasts. Gaming has been more than just a hobby for me—it’s a way to connect with people, relieve stress, and continuously learn new things. In the future, I aspire to explore more ways to integrate gaming and technology into education,
+            creating innovative learning experiences that bridge the gap between entertainment and knowledge. Whether I’m in the classroom teaching about computers or queuing up for a match in *Dota 2*, my goal remains the same: to keep learning, sharing,
+            and inspiring others. If you share the same passion for technology, gaming, or education, feel free to connect with me! Let’s continue exploring the exciting world of computers and gaming together.</p>
+    </section>
+
+    <!-- Contact & Social Media Section -->
+    <section id="contact" class="tile hidden">
+        <h2>Contact & Social Media</h2>
+        <p>If you'd like to connect with me, feel free to reach out via email or follow me on social media:</p>
+        <ul>
+            <li>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></li>
+            <li>Instagram: <a href="https://instagram.com/yourprofile">@yourprofile</a></li>
+            <li>Twitter: <a href="https://twitter.com/yourprofile">@yourprofile</a></li>
+            <li>LinkedIn: <a href="https://linkedin.com/in/yourprofile">Your Name</a></li>
+        </ul>
+    </section>
+
+    <!-- Photo Gallery Section -->
+    <section id="gallery" class="tile hidden">
+        <h2>Photo Gallery</h2>
+        <div class="gallery-container">
+            <div class="gallery-item"><img src="1.jpg" alt="Photo 1"></div>
+            <div class="gallery-item"><img src="2.jpg" alt="Photo 2"></div>
+            <div class="gallery-item"><img src="3.jpg" alt="Photo 3"></div>
+            <div class="gallery-item"><img src="4.jpg" alt="Photo 4"></div>
+            <div class="gallery-item"><img src="5.jpg" alt="Photo 5"></div>
+            <div class="gallery-item"><img src="6.jpg" alt="Photo 6"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 [Your Name]. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // JavaScript to toggle sections
+        function showSection(sectionId) {
+            // Hide all sections
+            document.querySelectorAll('section').forEach(section => {
+                section.classList.add('hidden');
+            });
+
+            // Show the selected section
+            document.getElementById(sectionId).classList.remove('hidden');
+        }
+
+        // Show the "About Me" section by default
+        showSection('about');
+    </script>
+</body>
+
+</html>

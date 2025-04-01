@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Add Comments About Me</title>
+    <style>
+        .body {
+            background-image: url("OIP.jpg");
+            z-index: 1;
+        }
+        
+        #comments {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 20px;
+            background: rgba(0, 0, 0, 0.8);
+            border-radius: 10px;
+            color: #fff;
+            text-align: center;
+            box-shadow: 0 0 10px #ff00ff;
+        }
+        
+        #comment-form textarea {
+            width: 100%;
+            height: 80px;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 2px solid #ff00ff;
+            border-radius: 5px;
+            background: #000;
+            color: #fff;
+            font-size: 1rem;
+        }
+        
+        #comment-form button {
+            background: #ff00ff;
+            color: #000;
+            font-weight: bold;
+            border: none;
+            padding: 10px 15px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: 0.3s;
+        }
+        
+        #comment-form button:hover {
+            background: #00ffff;
+            box-shadow: 0 0 10px #00ffff;
+        }
+        
+        #comment-list {
+            margin-top: 20px;
+            text-align: left;
+        }
+        
+        .comment {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 10px;
+            margin: 5px 0;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+
+<body style="background-image: url('OIP.jpg')">
+    <section id="comments">
+        <h2>LEAVE A COMMENT OR MESSAGE ABOUT ME</h2>
+        <form id="comment-form" action="submit_comment.php" method="POST">
+            <input type="text" name="user_name" placeholder="Your Name" required>
+            <textarea name="comment_text" placeholder="Write a comment..." required></textarea>
+            <button type="submit">Post Comment</button>
+        </form>
+        <div id="comment-list">
+            <?php include 'display_comments.php'; ?>
+        </div>
+    </section>
+    <button onclick="window.location.href='index.html'">GO BACK TO HOME</button>
+
+</body>
+
+</html>
