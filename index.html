@@ -3,7 +3,9 @@
 
 <head>
     <!--THIS IS THE HEAD-->
-    
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-80QGMDE842"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
@@ -984,34 +986,20 @@
             font-size: 2.5em;
         }
         /* For mobile screens, hide h1 and show h5 */
-        
-        @media (max-width: 768px) {
-            h1.responsive-heading {
-                display: none;
-            }
-            .h5-mobile {
-                display: block;
-                font-size: 1.2em;
-                /* Adjust font size for mobile */
-            }
-        }
         /* Default styling for navigation (desktop) */
         
-        nav leo ul {
+        nav ul {
             display: flex;
-            /* Display the menu items horizontally */
             justify-content: space-around;
             padding: 10px;
             background-color: #333;
-            /* Background color */
         }
         
-        nav leo ul li {
+        nav ul li {
             list-style: none;
-            /* Remove bullet points */
         }
         
-        nav leo ul li a {
+        nav ul li a {
             padding: 10px 20px;
             color: #fff;
             text-decoration: none;
@@ -1020,83 +1008,101 @@
             transition: background-color 0.3s ease;
         }
         
-        nav leo ul li a:hover {
+        nav ul li a:hover {
             background-color: #ff6f61;
-            /* Hover effect */
         }
         /* For mobile screens */
         
         @media (max-width: 768px) {
-            nav leo ul {
-                flex-direction: column;
-                /* Stack the items vertically */
+            nav ul {
                 align-items: center;
-                /* Center align items */
+                size: 0.1px;
             }
-            nav leo ul li a {
+            nav ul li a {
                 padding: 3px 9px;
-                /* Smaller padding for mobile */
                 font-size: 14px;
-                /* Adjust font size for mobile */
                 margin: 5px 0;
-                /* Add spacing between buttons */
             }
         }
-        /* Default styling for navigation (desktop) */
+        /* For screens smaller than 600px */
         
-        nav leo ul {
-            display: flex;
-            /* Display the menu items horizontally */
-            justify-content: space-around;
-            padding: 10px;
-            background-color: #333;
-            /* Background color */
-        }
-        
-        nav leo ul li {
-            list-style: none;
-            /* Remove bullet points */
-        }
-        
-        nav leo ul li a {
-            padding: 10px 20px;
-            color: #fff;
-            text-decoration: none;
-            background-color: #555;
-            border-radius: 5px;
-            transition: background-color 0.3s ease;
-        }
-        
-        nav leo ul li a:hover {
-            background-color: #ff6f61;
-            /* Hover effect */
-        }
-        /* For mobile screens */
-        
-        @media (max-width: 768px) {
-            nav leo ul {
-                flex-direction: column;
-                /* Stack the items vertically */
+        @media screen and (max-width: 600px) {
+            body {
+                scrollbar-width: none;
+                overflow-x: hidden;
+            }
+            nav ul li a {
+                display: flex;
+                /* Apply flexbox layout */
+                max-width: 100%;
+                /* Make the button span the full width of its parent */
+                font-size: 6.7px !important;
+                font: bold;
+                /* Set a readable font size */
+                color: black;
+                /* Text color */
+                flex-direction: row;
+                /* Arrange items in a row */
+                justify-content: center;
+                /* Center text horizontally */
                 align-items: center;
-                /* Center align items */
-                padding: 0;
-                /* Remove extra padding */
-            }
-            nav leo ul li {
-                margin: 5px 0;
-                /* Add spacing between the items */
-                width: 100%;
-                /* Make the list items take full width */
-            }
-            nav leo ul li a {
-                padding: 8px 15px;
-                /* Smaller padding for mobile */
-                font-size: 14px;
-                /* Adjust font size for mobile */
+                /* Center text vertically */
+                margin-right: 0;
+                /* Remove any right margin */
+                padding: 1000;
+                box-sizing: border-box;
+                /* Add padding inside the button */
                 text-align: center;
-                /* Center text inside the buttons */
-                width: auto;
-                /* Ensure buttons are not stretched */
+                /* Center the text */
+                white-space: nowrap;
+                /* Prevent text from wrapping */
+                overflow: visible;
+                /* Allow overflow to be visible */
+                height: 50px !important;
+                /* Set the height of the button */
+                background-color: #f0f0f0;
+                /* Optional: Add a background color */
+                /* Optional: Remove the border */
+                ;
+                /* Optional: Add rounded corners */
+            }
+            ul li {
+                width: 100%;
+                /* Use full width of the container */
+                height: 50px;
+                /* Fixed height for each list item */
+                margin-right: 0;
+                /* Remove any margin-right */
+                font-size: 0.01111%;
+                /* Adjust font size for readability */
+                transform: none;
+                /* Remove scale transformation for better control */
+                display: flex;
+                gap: 0px;
+                /* No gap between items */
+                overflow: hidden;
+                /* Hide any overflowing content */
+            }
+            .cloud {
+                width: 50px;
+                /* Smaller clouds for mobile */
+            }
+            .cloud1 {
+                left: 5%;
+            }
+            .cloud2 {
+                left: 1170%;
+            }
+            .cloud3 {
+                left: 75%;
+            }
+            @media screen and (max-width: 480px) {
+                .button {
+                    font-size: 0.008rem;
+                    /* Even smaller text on very small screens */
+                    padding: 6px 12px;
+                    /* Adjust padding further */
+                }
             }
         }
     </style>
@@ -1172,11 +1178,11 @@
             <h1 class="responsive-heading">Precious Candy Prado's Gallery</h1>
             <nav class="leo">
                 <ul>
-                    <li style="z-index: 9999; size:10px;"><a href="#about" class="neon-button" onclick="showSection('about')">About Me</a></li>
+                    <li style="z-index: 9999; "><a href="#about" class="neon-button" onclick="showSection('about')">About Me</a></li>
                     <li style="z-index: 9999; "><a href="#contact" class="neon-button" onclick="showSection('contact')">Contacts</a></li>
                     <li style="z-index: 9999; "><a href="#gallery" class="neon-button" onclick="showSection('gallery')">Photo Gallery</a></li>
-                    <li style="z-index: 9999; "><a href="comments" class="neon-button" onclick="window.open('commentsection.html', '_blank')"> Write </a></li>
-                    <li style="z-index: 9999;"><a href="pictures" class="neon-button" onclick="window.open('ex.html', '_blank')"> My Photos</a></li>
+                    <li style="z-index: 9999;  "><a href="comments" class="neon-button" onclick="window.open('commentsection.html', '_blank')"> Write </a></li>
+                    <li style="z-index: 9999;   "><a href="pictures" class="neon-button" onclick="window.open('ex.html', '_blank')"> My Photos</a></li>
                 </ul>
             </nav>
         </div>
@@ -1339,11 +1345,7 @@
 
     </h2>
     </div>
-    <div class="profile-card">
-        <h2>More Info</h2>
-        <!--THIS IS JUST DESIGN-->
-        <p>This is a test section to ensure scrolling works!</p>
-    </div>
+
 
 
     <!-- Photo Gallery Section -->
