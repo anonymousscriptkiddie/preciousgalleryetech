@@ -634,7 +634,7 @@
         }
         
         .heart {
-            position: fixed;
+            position: absolute;
             /* Ensure it's visible on screen */
             top: 0;
             left: 50%;
@@ -1030,6 +1030,22 @@
             body {
                 scrollbar-width: none;
                 overflow-x: hidden;
+                margin: 0;
+            }
+            .heart {
+                position: fixed;
+                user-select: none;
+                pointer-events: none;
+                animation: floatDown linear;
+                white-space: nowrap;
+            }
+            @keyframes floatDown {
+                from {
+                    transform: translateY(0);
+                }
+                to {
+                    transform: translateY(100vh);
+                }
             }
             nav ul li a {
                 display: flex;
@@ -1096,6 +1112,17 @@
             .cloud3 {
                 left: 75%;
             }
+            .clooned-container {
+                width: 190px;
+                height: 25px;
+            }
+            .dancingdoll {
+                width: 180px;
+                height: 25px;
+            }
+            .quote-box {
+                height: auto;
+            }
             @media screen and (max-width: 480px) {
                 .button {
                     font-size: 0.008rem;
@@ -1104,6 +1131,31 @@
                     /* Adjust padding further */
                 }
             }
+        }
+        
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            max-width: 100vw;
+            overflow-x: hidden;
+            box-sizing: border-box;
+            font-family: sans-serif;
+        }
+        /* Make sure all elements respect the box model */
+        
+        *,
+        *::before,
+        *::after {
+            box-sizing: inherit;
+        }
+        /* Prevent images and videos from overflowing */
+        
+        img,
+        video {
+            max-width: 100%;
+            height: auto;
+            display: block;
         }
     </style>
 </head>
@@ -1194,7 +1246,7 @@
     </div>
     <!-- Include the clooned script -->
 
-    <div id="clooned-3d-model" data-src="your-model.glb" data-autospin="true" data-speed="1" data-infinite="true">
+    <div class="dancingdoll" id="clooned-3d-model" data-src="your-model.glb" data-autospin="true" data-speed="1" data-infinite="true">
         <script src="https://clooned.com/wp-content/uploads/cloons/scripts/clooned.js"></script>
         <!-- Container for the 3D model -->
     </div>
@@ -1376,6 +1428,7 @@
     <script defer src="https://cdn.commento.io/js/commento.js"></script>
     <div id="commento"></div>
     </div>
+
     <section class="preview__container" style="--img: url(https://assets.codepen.io/2392/360__homepage--full.png)">
         <article class="preview mobile" tabindex="0"></article>
         <article class="preview mobile" tabindex="0"></article>
@@ -1392,7 +1445,7 @@
     <footer>
         <nav class="leo">
             <ul>
-
+                <!--an alt to button-->
                 <li><a href="#contact" class="neon-button" onclick="showSection('contact')">Contacts</a></li>
                 <li><a href="comments" class="neon-button" onclick="window.open('commentsection.html', '_blank')"> Write </a></li>
                 <li><a href="pictures" class="neon-button" onclick="window.open('ex.html', '_blank')"> My Photos</a></li>
@@ -1411,6 +1464,9 @@
 
             const heart = document.createElement("div");
             heart.innerHTML = "🍓";
+            const maxLeft = window.innerWidth - 40; // 40px buffer for big strawberries
+            heart.style.left = Math.random() * maxLeft + "px";
+
             heart.classList.add("heart");
 
             // Ensure hearts appear at random positions
