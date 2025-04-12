@@ -5,6 +5,7 @@
     <!--THIS IS THE HEAD-->
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery for AJAX -->
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-80QGMDE842"></script>
     <script>
@@ -1261,7 +1262,7 @@
                         <li id="nav2" style="z-index: 9999; "><a href="#contact" class="neon-button" onclick="showSection('contact')">Contacts</a></li>
                         <li id="nav3" style="z-index: 9999; "><a href="#gallery" class="neon-button" onclick="showSection('gallery')">Photo Gallery</a></li>
                         <li id="nav4" style="z-index: 9999;  "><a href="comments" class="neon-button" onclick="window.open('commentsection.html', '_blank')"> Write </a></li>
-                        <li id="nav5" style="z-index: 9999;   "><a href="pictures" class="neon-button" onclick="window.open('ex.html', '_blank')"> My Photos</a></li>
+                        <li class="nav5" id="nav5" style="z-index: 9999;   "><a href="pictures" class="neon-button" onclick="window.open('ex.html', '_blank')"> My Photos</a></li>
                     </ul>
                 </nav>
             </nav>
@@ -1473,7 +1474,7 @@
     </div>
     <footer>
         <nav class="leo">
-            <ul>
+            <ul class="foot">
                 <!--an alt to button-->
                 <li><a href="#contact" class="neon-button" onclick="showSection('contact')">Contacts</a></li>
                 <li><a href="comments" class="neon-button" onclick="window.open('commentsection.html', '_blank')"> Write </a></li>
@@ -1587,12 +1588,59 @@
             }
         }
 
+        
+
+
+
+
         // Run the function once to set the initial border color
         changeBorderColor();
 
         // Listen for window resize to update the border color
         window.addEventListener('resize', changefont);
+
+        document.querySelectorAll('nav').forEach(function(link) {
+            link.setAttribute('nav5', '_blank');
+        });
+
+        $(document).ready(function() {
+            // Get the current date and time (timestamp)
+            var currentDate = new Date();
+            var timestamp = currentDate.toISOString(); // Format it as ISO string (e.g., "2025-04-12T12:34:56.789Z")
+
+            // Send the timestamp via AJAX to the server
+            $.ajax({
+                url: 'log_visit.php', // Replace this with your server-side script (this can be PHP, Node.js, etc.)
+                type: 'POST',
+                data: {
+                    visit_time: timestamp // Send the timestamp to the server
+                },
+                success: function(response) {
+                    console.log('Visit logged successfully');
+                },
+                error: function(xhr, status, error) {
+                    console.log('Error logging visit:', error);
+                }
+            });
+        });
+        
     </script>
+    <script>
+        fetch('/api/log-visit', { method: 'POST' });
+      </script>
+
+<script>
+    // Call the API to log the visit when the page is loaded
+    fetch('/api/log-visit', { method: 'POST' })
+      .then(response => response.json())
+      .then(data => {
+        console.log('Visit logged:', data);
+      })
+      .catch(error => {
+        console.error('Error logging visit:', error);
+      });
+  </script>
+  
 
 
 
