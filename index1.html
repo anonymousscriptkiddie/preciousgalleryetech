@@ -5,7 +5,8 @@
     <!--THIS IS THE HEAD-->
     <!-- Bootstrap CSS -->
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script> <!-- jQuery for AJAX -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <!-- jQuery for AJAX -->
 
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-80QGMDE842"></script>
     <script>
@@ -1133,6 +1134,10 @@
             .quote-box {
                 height: auto;
             }
+            #contact {
+                font-size: 10px;
+                color: black;
+            }
             @media screen and (max-width: 480px) {
                 .button {
                     font-size: 0.008rem;
@@ -1152,6 +1157,13 @@
             #gallery {
                 background-color: pink;
                 color: black;
+            }
+            .ul li {
+                color: black;
+            }
+            .lst {
+                color: black;
+                font-size: 30px !important;
             }
         }
         
@@ -1183,6 +1195,10 @@
         .nav {
             background-color: magenta !important;
             color: purple;
+        }
+        
+        .ul li {
+            color: black;
         }
     </style>
 </head>
@@ -1342,10 +1358,12 @@
         <h2>Contact & Social Media</h2>
         <p>If you'd like to connect with me, feel free to reach out via email or follow me on social media:</p>
         <ul>
-            <li>Email: <a href="mailto:your.email@example.com">preciouscandyprado@goodsam.edu.ph</a></li>
-            <li>Instagram: <a href="https://instagram.com/yourprofile">@prscdy678</a></li>
-            <li>Youtube: <a href="https://www.youtube.com/@candy7333">candy7333</a></li>
-            <li>Github: <a href="https://github.com/anonymousscriptkiddie">anonymousscriptkiddie</a></li>
+            <li class="lst">Email: <a href="mailto:your.email@example.com">preciouscandyprado@goodsam.edu.ph</a></li>
+            <li class="lst">Instagram: <a href="https://instagram.com/yourprofile">@prscdy678</a></li>
+            <li class="lst">Youtube: <a href="https://www.youtube.com/@candy7333">candy7333</a></li>
+            <li class="lst">Github: <a href="https://github.com/anonymousscriptkiddie">anonymousscriptkiddie</a></li>
+            <li class="lst">Hellotalk: ho_precious9090</li>
+
 
         </ul>
 
@@ -1588,7 +1606,7 @@
             }
         }
 
-        
+
 
 
 
@@ -1623,24 +1641,27 @@
                 }
             });
         });
-        
     </script>
     <script>
-        fetch('/api/log-visit', { method: 'POST' });
-      </script>
+        fetch('/api/log-visit', {
+            method: 'POST'
+        });
+    </script>
 
-<script>
-    // Call the API to log the visit when the page is loaded
-    fetch('/api/log-visit', { method: 'POST' })
-      .then(response => response.json())
-      .then(data => {
-        console.log('Visit logged:', data);
-      })
-      .catch(error => {
-        console.error('Error logging visit:', error);
-      });
-  </script>
-  
+    <script>
+        // Call the API to log the visit when the page is loaded
+        fetch('/api/log-visit', {
+                method: 'POST'
+            })
+            .then(response => response.json())
+            .then(data => {
+                console.log('Visit logged:', data);
+            })
+            .catch(error => {
+                console.error('Error logging visit:', error);
+            });
+    </script>
+
 
 
 
