@@ -1,3 +1,13 @@
 # preciousgalleryetech
 Kindly open the code into a compiler or integrated development environment in case it has an error into a deployment
-This project is done by the help and advicde of some international website developers online
+This project is done by the help and advice of some international website developers online BUT IN SPITE OF THAT (IT WAS ALL CODED BY ME)
+NOTE THAT: 
+I MYSELF DOESNT ALLOW ANY INDIVIDUALS TO COPY MY WORK WITHOUT MY PERMISSION, I THE AUTHOR: PRECIOUS CANDY ABILLONAR PRADO WILL DEFINITELY REPORT SOMEONE ELSE THAT COPY MY WORK EVEN WITH CITATIONS IF NOT GUARANTEED BY MY OWN PERMISSION.
+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+THIS CONTAINS THOUSANDS LINE OF CODES AND WAS MADE INSIDE APPROXIMATELY 25 DAYS
+THIS WAS CREATED BY A 16 YEARS OLD GIRL FOR HER EMPOWERMENT TECHNOLOGY PROJECT
+THIS WAS CREATED USING HYPER-TEXT MARKUP LANGUAGE, CASCADING STYLESHEET, JAVASCRIPT, AND PHP, BOOTSTRAP, MEDIA QUERIES. MOREOVER THIS WORK CAN BE PROBABLY UPDATED AS SOON AS POSSIBLE AND SQL DATABASE CAN BE ADDED. 
+LANGUAGE USE: ENGLISH;
+COMPILER AND INTEGRATED DEVELOPMENT USE: VISUAL STUDIO CODE
+DEPLOYMENT USE: VERCEL;
+
