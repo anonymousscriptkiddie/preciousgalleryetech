@@ -1047,6 +1047,12 @@
                     transform: translateY(100vh);
                 }
             }
+            .gallery-item {
+                height: 300px;
+            }
+            .gallery-constainer {
+                height: 300px;
+            }
             nav ul li a {
                 display: flex;
                 /* Apply flexbox layout */
@@ -1105,9 +1111,12 @@
             }
             .cloud1 {
                 left: 5%;
-            }
-            .cloud2 {
-                left: 1170%;
+                left: 5%;
+                /* This positions the element 5% from the left side of the screen */
+                top: 50%;
+                /* This centers it vertically */
+                transform: translateY(-50%);
+                /* Adjusts the position to perfectly center it */
             }
             .cloud3 {
                 left: 75%;
@@ -1130,6 +1139,18 @@
                     padding: 6px 12px;
                     /* Adjust padding further */
                 }
+            }
+            .gallery-item {
+                height: 149px !important;
+                background-color: rgb(8, 0, 1);
+            }
+            .gallery-container {
+                background-color: pink;
+                color: black;
+            }
+            #gallery {
+                background-color: pink;
+                color: black;
             }
         }
         
@@ -1156,6 +1177,11 @@
             max-width: 100%;
             height: auto;
             display: block;
+        }
+        
+        .nav {
+            background-color: magenta !important;
+            color: purple;
         }
     </style>
 </head>
@@ -1228,14 +1254,16 @@
             <h5 class="h5-mobile">Precious Candy Prado's Gallery</h5>
 
             <h1 class="responsive-heading">Precious Candy Prado's Gallery</h1>
-            <nav class="leo">
-                <ul>
-                    <li style="z-index: 9999; "><a href="#about" class="neon-button" onclick="showSection('about')">About Me</a></li>
-                    <li style="z-index: 9999; "><a href="#contact" class="neon-button" onclick="showSection('contact')">Contacts</a></li>
-                    <li style="z-index: 9999; "><a href="#gallery" class="neon-button" onclick="showSection('gallery')">Photo Gallery</a></li>
-                    <li style="z-index: 9999;  "><a href="comments" class="neon-button" onclick="window.open('commentsection.html', '_blank')"> Write </a></li>
-                    <li style="z-index: 9999;   "><a href="pictures" class="neon-button" onclick="window.open('ex.html', '_blank')"> My Photos</a></li>
-                </ul>
+            <nav>
+                <nav class="leo">
+                    <ul>
+                        <li id="nav1" style="z-index: 9999; "><a href="#about" class="neon-button" onclick="showSection('about')">About Me</a></li>
+                        <li id="nav2" style="z-index: 9999; "><a href="#contact" class="neon-button" onclick="showSection('contact')">Contacts</a></li>
+                        <li id="nav3" style="z-index: 9999; "><a href="#gallery" class="neon-button" onclick="showSection('gallery')">Photo Gallery</a></li>
+                        <li id="nav4" style="z-index: 9999;  "><a href="comments" class="neon-button" onclick="window.open('commentsection.html', '_blank')"> Write </a></li>
+                        <li id="nav5" style="z-index: 9999;   "><a href="pictures" class="neon-button" onclick="window.open('ex.html', '_blank')"> My Photos</a></li>
+                    </ul>
+                </nav>
             </nav>
         </div>
     </header>
@@ -1327,64 +1355,65 @@
         <p><em>“In many places in Siena, great pits were dug and piled deep with the multitude of dead. I... buried my five children with my own hands.”</em></p>
         <p>- The Black Death, 1348</p>
     </div>
-    <div class="container">
-        <h1>Prexcious' Coquette Cyberpunk Profile</h1>
-        <div class="profile-card">
-            <img src="girl.webp" alt="Profile Picture">
-            <h2>About Me</h2>
-            <p><strong>Name:</strong> Precious</p>
-            <p><strong>Age:</strong> 16 years old</p>
-            <p><strong>Location:</strong> Barangay Bago, General Tinio, Nueva Ecija, Philippines</p>
-            <h2>Hobbies</h2>
-            <p>Coding a little| Calligraphy | Animation | Scrabble | Books | Electronics | Dolls| History</p>
-            <div class="buttons">
-                <button class="neon-button" onclick="openPopup('popup-coding')">Coding</button>
-                <button class="neon-button" onclick="openPopup('popup-calligraphy')">Calligraphy</button>
-                <button class="neon-button" onclick="openPopup('popup-animation')">Animation</button>
-                <button class="neon-button" onclick="openPopup('popup-scrabble')">Scrabble</button>
-                <button class="neon-button" onclick="openPopup('popup-history')">History</button>
-            </div>
+    <div class="cont">
+        <div class="container">
+            <h1>Prexcious' Coquette Cyberpunk Profile</h1>
+            <div class="profile-card">
+                <img src="girl.webp" alt="Profile Picture">
+                <h2>About Me</h2>
+                <p><strong>Name:</strong> Precious</p>
+                <p><strong>Age:</strong> 16 years old</p>
+                <p><strong>Location:</strong> Barangay Bago, General Tinio, Nueva Ecija, Philippines</p>
+                <h2>Hobbies</h2>
+                <p>Coding a little| Calligraphy | Animation | Scrabble | Books | Electronics | Dolls| History</p>
+                <div class="buttons">
+                    <button class="neon-button" onclick="openPopup('popup-coding')">Coding</button>
+                    <button class="neon-button" onclick="openPopup('popup-calligraphy')">Calligraphy</button>
+                    <button class="neon-button" onclick="openPopup('popup-animation')">Animation</button>
+                    <button class="neon-button" onclick="openPopup('popup-scrabble')">Scrabble</button>
+                    <button class="neon-button" onclick="openPopup('popup-history')">History</button>
+                </div>
 
-            <!-- Popups -->
-            <div id="popup-coding" class="popup">
-                <div class="popup-content" style="background-image: url('window.jpg');">
-                    <button class="close-btn" onclick="closePopup('popup-coding')">✖</button>
-                    <p style="color: black;">More about my coding projects coming soon!</p>
+                <!-- Popups -->
+                <div id="popup-coding" class="popup">
+                    <div class="popup-content" style="background-image: url('window.jpg');">
+                        <button class="close-btn" onclick="closePopup('popup-coding')">✖</button>
+                        <p style="color: black;">More about my coding projects coming soon!</p>
+                    </div>
+                </div>
+
+                <div id="popup-calligraphy" class="popup">
+                    <div class="popup-content" style="background-image: url('pinkwin.png');">
+                        <button class="close-btn" onclick="closePopup('popup-calligraphy')">✖</button>
+                        <p>Exploring calligraphy styles!</p>
+                    </div>
+                </div>
+
+                <div id="popup-animation" class="popup">
+                    <div class="popup-content" style="background-image: url('pinkwin.png');">
+                        <button class="close-btn" onclick="closePopup('popup-animation')">✖</button>
+                        <p>Making animation sometimes using Mineimator.</p>
+                    </div>
+                </div>
+
+                <div id="popup-scrabble" class="popup">
+                    <div class="popup-content" style="background-image: url('pinkwin.png');">
+                        <button class="close-btn" onclick="closePopup('popup-scrabble')">✖</button>
+                        <p>Let's play Scrabble!</p>
+                    </div>
+                </div>
+
+                <div id="popup-history" class="popup">
+                    <div class="popup-content" style="background-image: url('pinkwin.png');">
+                        <button class="close-btn" onclick="closePopup('popup-history')">✖</button>
+                        <p>I like tragic history.</p>
+                    </div>
                 </div>
             </div>
-
-            <div id="popup-calligraphy" class="popup">
-                <div class="popup-content" style="background-image: url('pinkwin.png');">
-                    <button class="close-btn" onclick="closePopup('popup-calligraphy')">✖</button>
-                    <p>Exploring calligraphy styles!</p>
-                </div>
-            </div>
-
-            <div id="popup-animation" class="popup">
-                <div class="popup-content" style="background-image: url('pinkwin.png');">
-                    <button class="close-btn" onclick="closePopup('popup-animation')">✖</button>
-                    <p>Making animation sometimes using Mineimator.</p>
-                </div>
-            </div>
-
-            <div id="popup-scrabble" class="popup">
-                <div class="popup-content" style="background-image: url('pinkwin.png');">
-                    <button class="close-btn" onclick="closePopup('popup-scrabble')">✖</button>
-                    <p>Let's play Scrabble!</p>
-                </div>
-            </div>
-
-            <div id="popup-history" class="popup">
-                <div class="popup-content" style="background-image: url('pinkwin.png');">
-                    <button class="close-btn" onclick="closePopup('popup-history')">✖</button>
-                    <p>I like tragic history.</p>
-                </div>
-            </div>
+            <img src="cloud1.webp" class="cloud cloud1" id="cloud1">
+            <img src="cloud1.webp" class="cloud cloud2" id="cloud2">
+            <img src="cloud1.webp" class="cloud cloud3" id="cloud3">
         </div>
-        <img src="cloud1.webp" class="cloud cloud1" id="cloud1">
-        <img src="cloud1.webp" class="cloud cloud2" id="cloud2">
-        <img src="cloud1.webp" class="cloud cloud3" id="cloud3">
-
         <script>
             window.addEventListener("scroll", function() {
                 let scrollY = window.scrollY;
@@ -1404,20 +1433,20 @@
 
     <!-- Photo Gallery Section -->
     <section id="gallery" class="tile hidden">
-        <h2>Photo Gallery</h2>
+        <h2>Photo Gallery 📸 </h2>
         <div class="gallery-container">
-            <div class="gallery-item" style="height: 250px !important;"><img src="485470560_856077153319006_5085476708029074997_n.jpg" alt="photo1"></div>
-            <div class="gallery-item" style="height: 250px !important;"><img src="483911011_1281688492929165_1228487721966868426_n.jpg" alt="photo2"></div>
-            <div class="gallery-item" style="height: 250px !important;"><img src="483889412_1785771201990747_8830959694095705122_n.jpg" alt="photo3"></div>
-            <div class="gallery-item" style="height: 250px !important;"><img src="484213740_679499424510668_4454581039173924319_n.jpg" alt="Photo 4"></div>
-            <div class="gallery-item" style="height: 250px !important;"><img src="sister.png" alt="Photo 5"></div>
-            <div class="gallery-item" style="height: 250px !important;"><img src="476147605_1699225853993498_3873099500189458032_n.jpg" alt="Photo 6"></div>
-            <div class="gallery-item" style="height: 250px !important;"><img src="486185941_637320769093433_401943977722310284_n.jpg" alt="Photo 7"></div>
-            <div class="gallery-item" style="height: 250px !important;"><img src="482905251_2074557656399385_4006739765457912944_n.jpg" alt="Photo 8"></div>
-            <div class="gallery-item" style="height: 250px !important;"><img src="484318361_1025525546116749_2635451583042005618_n.jpg" alt="Photo 10"></div>
-            <div class="gallery-item" style="height: 250px !important;"><img src="484413360_1039436961338387_9039427114078538420_n.jpg" alt="Photo 11"></div>
-            <div class="gallery-item" style="height: 250px !important;"><img src="486147257_1756703981578849_1695300656263956294_n.jpg" alt="Photo 12"></div>
-            <div class="gallery-item" style="height: 250px !important;"><img src="485954357_590090753801886_7577626001580482865_n.jpg" alt="Photo 12"></div>
+            <div class="gallery-item"><img src="485470560_856077153319006_5085476708029074997_n.jpg" alt="photo1"></div>
+            <div class="gallery-item"><img src="483911011_1281688492929165_1228487721966868426_n.jpg" alt="photo2"></div>
+            <div class="gallery-item"><img src="483889412_1785771201990747_8830959694095705122_n.jpg" alt="photo3"></div>
+            <div class="gallery-item"><img src="484213740_679499424510668_4454581039173924319_n.jpg" alt="Photo 4"></div>
+            <div class="gallery-item"><img src="sister.png" alt="Photo 5"></div>
+            <div class="gallery-item"><img src="476147605_1699225853993498_3873099500189458032_n.jpg" alt="Photo 6"></div>
+            <div class="gallery-item"><img src="486185941_637320769093433_401943977722310284_n.jpg" alt="Photo 7"></div>
+            <div class="gallery-item"><img src="482905251_2074557656399385_4006739765457912944_n.jpg" alt="Photo 8"></div>
+            <div class="gallery-item"><img src="485027396_2935688226592964_6141401106996168760_n.jpg" ; alt="Photo 10"></div>
+            <div class="gallery-item"><img src="484413360_1039436961338387_9039427114078538420_n.jpg" alt="Photo 11"></div>
+            <div class="gallery-item"><img src="486147257_1756703981578849_1695300656263956294_n.jpg" alt="Photo 12"></div>
+            <div class="gallery-item"><img src="485954357_590090753801886_7577626001580482865_n.jpg" alt="Photo 12"></div>
 
             <div class="scene">
 
@@ -1528,6 +1557,41 @@
         }
 
         setInterval(moveImage, 1000); // Moves every 1 second
+
+        document.title = "Precious Gallery";
+        document.body.style.backgroundColor = 'none';;
+        document.body.style.backgroundImage = "url('strawberry.jpg')";
+        document.body.style.fontfamily = 'sans-serif';
+        const paragraphs = document.querySelectorAll('p');
+        paragraphs.forEach(paragraph => {
+            paragraph.style.fontFamily = 'sans-serif';
+            paragraph.style.fontSize = '20px';
+        });
+
+
+        const navbar = document.querySelectorAll('nav');
+        navElements.forEach()(nav => {
+            nav.style.fontFamily = 'sans-serif'; // Set the font to sans-serif
+            nav.style.fontSize = '15px'; // Set the font size to 20px
+            nav.style.border = '2px solid #000';
+            nav.style.padding = '10px';
+            nav.style.boxShadow = '0px 4px 10px rgba(0, 0, 0, 0.2)';
+        });
+
+        function changefont() {
+            const nav = document.querySelector('nav');
+            if (window.innerWidth < 600) {
+                nav.style.border = '2px solid blue'; // Blue border for small screens
+            } else {
+                nav.style.border = '2px solid red'; // Red border for larger screens
+            }
+        }
+
+        // Run the function once to set the initial border color
+        changeBorderColor();
+
+        // Listen for window resize to update the border color
+        window.addEventListener('resize', changefont);
     </script>
 
 
