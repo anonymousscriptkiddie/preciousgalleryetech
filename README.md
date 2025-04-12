@@ -1,2 +1,2 @@
 # preciousgalleryetech
-Kindly please dont open the deployments and try to run it into a compiler or an IDE to void further error that vercel may cause due its error in file deployment
+Kindly open the code into a compiler or integrated development environment in case it has an error into a deployment
